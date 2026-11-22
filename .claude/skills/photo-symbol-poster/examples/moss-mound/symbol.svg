@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1600" data-paper="#EFEBE1">
+  <!-- Source: moss-covered mound, fallen maple leaf on the crest, razor-thin focal plane, soft field behind.
+       Sign = dome (mound) + 7-lobe fan (leaf) + one slit (focal plane) + one disc (out-of-focus field). -->
+  <defs>
+    <style>
+      text { font-family: 'JetBrains Mono', 'DejaVu Sans Mono', monospace; font-size: 22px; letter-spacing: 0.09em; }
+      .hair { fill: none; stroke: #272C1B; stroke-width: 2; }
+      .fine { fill: none; stroke: #272C1B; stroke-width: 1.5; }
+    </style>
+    <path id="lens" d="M-50 0 Q0 -24 50 0 Q0 24 -50 0Z"/>
+    <mask id="dome-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="2400" height="1600">
+      <rect width="2400" height="1600" fill="#fff"/>
+      <!-- focal plane: the one sharp cut -->
+      <rect x="600" y="706" width="1200" height="10" fill="#000"/>
+      <!-- depth-of-field falloff: the body dissolves toward the foreground -->
+      <rect x="600" y="868" width="1200" height="4"  fill="#000"/>
+      <rect x="600" y="889" width="1200" height="8"  fill="#000"/>
+      <rect x="600" y="915" width="1200" height="13" fill="#000"/>
+      <rect x="600" y="947" width="1200" height="19" fill="#000"/>
+      <rect x="600" y="982" width="1200" height="18" fill="#000"/>
+      <!-- pale leaves resting on the moss: negative space -->
+      <use href="#lens" transform="translate(985 800) rotate(-24) scale(1.0)" fill="#000"/>
+      <use href="#lens" transform="translate(1430 778) rotate(14) scale(1.3)" fill="#000"/>
+      <use href="#lens" transform="translate(1175 842) rotate(-6) scale(0.62)" fill="#000"/>
+    </mask>
+  </defs>
+
+  <!-- 04 field: the blurred background, one soft disc -->
+  <g data-plate="mist">
+    <circle cx="1508" cy="566" r="246" fill="#9DB3BC"/>
+    <rect x="462" y="1462" width="26" height="26" fill="#9DB3BC"/>
+  </g>
+
+  <!-- 01 mound -->
+  <g data-plate="moss">
+    <path d="M655.3 1000 A560 560 0 0 1 1744.7 1000Z" fill="#4C800A" mask="url(#dome-cut)"/>
+    <rect x="90" y="1462" width="26" height="26" fill="#4C800A"/>
+    <g fill="none" stroke="#4C800A" stroke-width="2"><circle cx="2290" cy="1475" r="15"/><path d="M2264 1475H2316M2290 1449V1501"/></g>
+  </g>
+
+  <!-- 02 leaf: seven lobes fanned around the surface normal -->
+  <g data-plate="amber">
+    <g transform="translate(1010 603.2) rotate(-19.8)" fill="#C97A2B">
+      <path d="M0 0Q13 -82 0 -150Q-13 -82 0 0Z" transform="rotate(-78)"/>
+      <path d="M0 0Q15 -104 0 -190Q-15 -104 0 0Z" transform="rotate(-52)"/>
+      <path d="M0 0Q16 -118 0 -216Q-16 -118 0 0Z" transform="rotate(-26)"/>
+      <path d="M0 0Q17 -128 0 -234Q-17 -128 0 0Z"/>
+      <path d="M0 0Q16 -118 0 -216Q-16 -118 0 0Z" transform="rotate(26)"/>
+      <path d="M0 0Q15 -104 0 -190Q-15 -104 0 0Z" transform="rotate(52)"/>
+      <path d="M0 0Q13 -82 0 -150Q-13 -82 0 0Z" transform="rotate(78)"/>
+    </g>
+    <rect x="276" y="1462" width="26" height="26" fill="#C97A2B"/>
+    <g fill="none" stroke="#C97A2B" stroke-width="2"><circle cx="2290" cy="1475" r="15"/><path d="M2264 1475H2316M2290 1449V1501"/></g>
+  </g>
+
+  <!-- functional code: the focal plane index -->
+  <g data-plate="signal">
+    <path d="M520 699L544 711L520 723Z" fill="#D6246E"/>
+    <circle cx="1010" cy="603.2" r="6" fill="#D6246E"/>
+    <text x="520" y="686" fill="#D6246E">03</text>
+    <rect x="648" y="1462" width="26" height="26" fill="#D6246E"/>
+    <g fill="none" stroke="#D6246E" stroke-width="2"><circle cx="2290" cy="1475" r="15"/><path d="M2264 1475H2316M2290 1449V1501"/></g>
+  </g>
+
+  <!-- key: construction, indices, annotations -->
+  <g data-plate="key" data-register="key">
+    <!-- the circle the mound belongs to -->
+    <path class="hair" stroke-dasharray="2 11" d="M1744.7 1000 A560 560 0 0 1 1707.5 1366.7"/>
+    <path class="hair" stroke-dasharray="2 11" d="M655.3 1000 A560 560 0 0 0 692.5 1366.7"/>
+    <!-- ground line -->
+    <path class="hair" d="M520 1000H1880"/>
+    <path class="fine" d="M520 988V1012M1880 988V1012M1200 1000V1016"/>
+    <!-- focal plane, continued outside the body -->
+    <path class="fine" d="M556 711H822M1578 711H1880"/>
+    <!-- axis, normal, angle -->
+    <path class="fine" stroke-dasharray="10 8" d="M1200 1130V540"/>
+    <path class="fine" d="M1200 1130L1010 603.2"/>
+    <path class="fine" d="M1200 1020A110 110 0 0 0 1162.7 1026.5"/>
+    <path class="hair" d="M1188 1130H1212M1200 1118V1142"/>
+    <!-- the fall -->
+    <path class="hair" stroke-dasharray="1 13" stroke-linecap="round" d="M560 286C760 286 930 380 1010 603.2"/>
+    <g class="fine" fill="#EFEBE1"><circle cx="560" cy="286" r="8"/><circle cx="801" cy="341" r="8"/><circle cx="951" cy="470" r="8"/></g>
+    <!-- sparse grid -->
+    <g class="fine" opacity="0.45">
+      <path d="M392 392H408M400 384V400M2000 392H2016M2008 384V400M392 1192H408M400 1184V1200M2000 1192H2016M2008 1184V1200"/>
+    </g>
+    <!-- registration -->
+    <g class="hair"><circle cx="2290" cy="1475" r="15"/><path d="M2264 1475H2316M2290 1449V1501"/></g>
+
+    <g fill="#272C1B">
+      <text x="90" y="118">DSC05040 → SIGN</text>
+      <text x="90" y="152" opacity="0.6">FIG. 01 — MOUND / LEAF / FOCAL PLANE</text>
+      <text x="2310" y="118" text-anchor="end">50 : 50</text>
+
+      <text x="1900" y="1007">01 MOUND</text>
+      <text x="1900" y="1037" opacity="0.6">R 560 · H 430</text>
+      <text x="1084" y="356" text-anchor="end">02 LEAF ×7</text>
+      <text x="1900" y="718">03 FOCAL PLANE</text>
+      <text x="1772" y="430">04 FIELD</text>
+      <text x="1214" y="1160" opacity="0.6">C</text>
+      <text x="1146" y="1060" opacity="0.6" text-anchor="end" font-size="18">19.8°</text>
+      <text x="530" y="262" opacity="0.6" font-size="18">a</text>
+      <text x="786" y="318" opacity="0.6" font-size="18">b</text>
+      <text x="968" y="452" opacity="0.6" font-size="18">c</text>
+
+      <text x="128" y="1482">G1 4C800A</text>
+      <text x="314" y="1482">A2 C97A2B</text>
+      <text x="500" y="1482">B3 9DB3BC</text>
+      <text x="686" y="1482">M4 D6246E</text>
+      <text x="2240" y="1482" text-anchor="end">what falls, the moss keeps.</text>
+    </g>
+  </g>
+</svg>
